@@ -20,11 +20,11 @@ public static class NetUtility
         var opCode = (OpCode)stream.ReadByte();
         switch (opCode)
         {
-            case OpCode.KEEP_ALIVE: msg = new NetKeepAlive(); break;
-            case OpCode.WELCOME: msg = new NetWelcome(); break;
-            case OpCode.START_GAME: msg = new NetStartGame(); break;
-            case OpCode.MAKE_MOVE: msg = new NetMakeMove(); break;
-            //case OpCode.REMATCH: msg = new NetRematch(); break;
+            case OpCode.KEEP_ALIVE: msg = new NetKeepAlive(stream); break;
+            case OpCode.WELCOME: msg = new NetWelcome(stream); break;
+            case OpCode.START_GAME: msg = new NetStartGame(stream); break;
+            case OpCode.MAKE_MOVE: msg = new NetMakeMove(stream); break;
+            case OpCode.REMATCH: msg = new NetRematch(stream); break;
             default:
                 Debug.LogError("Message recieved had no OpCode");
                 break;

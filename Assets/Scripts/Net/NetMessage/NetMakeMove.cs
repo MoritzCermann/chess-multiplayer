@@ -35,6 +35,8 @@ public class NetMakeMove : NetMessage
         destinationX = reader.ReadInt();
         destinationY = reader.ReadInt();
         teamId = reader.ReadInt();
+        UnityEngine.Debug.Log($"Deserialize: originalX={originalX}, originalY={originalY}, destinationX={destinationX}, destinationY={destinationY}, teamId={teamId}");
+
     }
 
     public override void ReceivedOnClient()
